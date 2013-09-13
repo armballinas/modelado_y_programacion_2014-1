@@ -1,0 +1,36 @@
+#include<iostream>
+
+using namespace std;
+
+class Vector{
+public:
+	Vector(int size) : elem{new double[size]}, size{size} {} //construye un vector de tamaño s
+	double& operator[] (int i){ //acceso a elementos del vector mediante indexación
+		return elem[i];
+	}
+	
+	int getSize(){
+		return size;
+	}
+	
+private:
+	double *elem;
+	int size;		
+};
+
+double read_and_sum(int s){
+	Vector v(s);
+	for(int i=0;i<v.getSize();i++){
+		cin>>v[i];
+	}
+	double sum = 0;
+	for(int i=0;i<v.getSize();i++){
+		sum+=v[i];
+	}
+	return sum;
+}
+
+int main(){
+	Vector v(6); //construyo un vector de tamaño 6;
+
+}
